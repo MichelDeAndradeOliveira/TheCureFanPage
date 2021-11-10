@@ -1,0 +1,708 @@
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+  <link rel="icon" href="img/TC.png">
+  <title>TheCureDiscografia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      color: white;
+      box-sizing: border-box ;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    body {
+      background-color: black;
+    }
+
+    header {
+      float: left;
+      margin: 0;
+      box-sizing: border-box;
+      height: auto;
+      border: px solid white;
+      width: 50%;
+      background-color: black;
+    }
+
+    nav {
+      float: left;
+      height: 245px;
+      border: 0px solid black;
+      box-sizing: border-box;
+      list-style-type: none;
+
+      width: 50%;
+    }
+
+    button {
+      background-color: black;
+      border: 1px solid black;
+      border-radius: 8px;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+      outline: none;
+      position: relative;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .button:active {
+      border: 1px solid #ff0000;
+      background-color: gray;
+      color: black;
+    }
+
+    .button:hover {
+      border: 1px solid gray;
+    }
+
+    .button:disabled {
+      text-decoration: underline;
+      border: 1px solid black;
+    }
+
+    .text {
+      font-family: 'Open Sans', sans-serif;
+      color: black;
+      font-size: 18px;
+      padding: 8px 12px;
+      position: relative;
+      bottom: 0px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .numbertext {
+      font-family: 'Open Sans', sans-serif;
+      color: Black;
+      font-size: 18px;
+      padding-top: 0px;
+      position: relative;
+    }
+
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: #717171;
+    }
+
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    @keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    @media only screen and (max-width: 300px) {
+
+      .prev,
+      .next,
+      .text {
+        font-size: 11px
+      }
+    }
+
+    #loading {
+      width: 40px;
+      height: 40px;
+      -webkit-animation: rotation 3s infinite linear;
+    }
+
+    @-webkit-keyframes rotation {
+      from {
+        -webkit-transform: rotate(0deg);
+      }
+
+      to {
+        -webkit-transform: rotate(359deg);
+      }
+    }
+
+    section {
+      overflow-y: auto;
+      margin: 25%;
+      box-sizing: border-box;
+      display: inline-block;
+      float: left;
+      background-color: black;
+      min-height: 500px;
+      width: 75%;
+      color: white;
+    }
+
+    .content {
+      width: 75%;
+    }
+
+    .gif {
+      width: 25%;
+    }
+
+    p {
+     
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    footer {
+      float: left;
+      min-height: 50px;
+      color: white;
+      box-sizing: border-box;
+      list-style-type: none;
+      background-color: black;
+      width: 100%;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .Menu {
+      font-family: 'Open Sans', sans-serif;
+      color: white;
+    }
+
+    .Menu:link,
+    a:visited {
+      font-family: 'Open Sans', sans-serif;
+      display: inline-block;
+      background-color: black;
+      color: white;
+      border: 1px solid black;
+      border-radius: 8px;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+
+    }
+
+    .Menu:hover {
+      border: 1px solid gray;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .Menu:active {
+      font-family: 'Open Sans', sans-serif;
+      background-color: gray;
+      color: black;
+      border: 1px solid black;
+    }
+
+    .logo {
+      width: auto;
+    }
+
+    img {
+      width: 300px;
+      heigth: 300px;
+      float: left;
+
+    }
+
+    .d {
+      width: 32px;
+      heigth: 32px;
+    }
+
+    .label {
+      padding-right: 1cm;
+      top: 0px;
+      width: 300px;
+    }
+
+    td {
+
+      width: auto;
+      max-height: 300px;
+    }
+
+    tr {
+
+      vertical-align: top;
+
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    ul.c {
+      list-style-type: upper-roman;
+    }
+
+    li {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 12px;
+      width: 200px;
+    }
+
+    .t {
+      font-size: 22px;
+    }
+
+    .longtext {
+      font-size: 12px;
+    }
+
+    table {
+      width: 75%;
+      border: 1px solid black;
+    }
+
+    aside {
+      text-align: left;
+      float: right;
+      box-sizing: border-box;
+      right: 0px;
+      top: 125px;
+      width: 25%;
+      min-height: 200px;
+      position: fixed;
+      font-size: 12px;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    a {
+      font-family: 'Open Sans', sans-serif;
+      display: inline-block;
+      background-color: black;
+      color: white;
+      border: 1px solid black;
+      border-radius: 8px;
+      padding: 10px 50px;
+      text-align: center;
+      text-decoration: none;
+    }
+  </style>
+
+
+</head>
+<p id="topo"></p>
+
+<body>
+
+  <header>
+    <img class="logo" float=left src="img/TheCure.png">
+  </header>
+  <nav>
+    <a class="Menu" HREF="Index.html">Home</a>
+    <button class="button" disabled>Discografia</button>
+    <a class="Menu" HREF="News.html">News</a>
+    <a class="Menu" HREF="Downloads.html">Downloads</a>
+    <a class="Menu" HREF="RedesSociais.html">Redes Sociais</a>
+  </nav>
+  <table>
+    <tbody>
+      <tr id="4:13Dream">
+        <td class="label"><img src="img/Labels/4-13Dream.jpg" /></td>
+        <td>
+          <h1>4:13 Dream</h1>
+          <p>4:13 Dream é o décimo terceiro álbum de estúdio da banda britânica The Cure, editado em outubro de 2008.
+            Este álbum foi apresentado integralmente ao vivo, em Roma, no evento da MTV da Itália, Coca Cola Live, em 11
+            de outubro de 2008.</p>
+        </td>
+        <td class="t">
+          <ol class="c">
+            <li>Underneath the Stars</li>
+            <li>The Only One</li>
+            <li>The Reasons Why</li>
+            <li>Freakshow</li>
+            <li>Sirensong</li>
+            <li>The Real Snow White</li>
+            <li>The Hungry Ghost</li>
+            <li>Switch"</li>
+            <li>The Perfect Boy</li>
+            <li>This. Here and Now. With You</li>
+            <li>Sleep When I'm Dead</li>
+            <li>The Scream</li>
+            <li>It's Over</li>
+          </ol>
+        </td>
+
+      </tr>
+
+      <aside>
+        <a class="asideMenu" href="#4:13Dream">2008 - 4:13 Dream</a>
+        <br />
+        <a class="asideMenu" href="#TheCure">2004 - The Cure</a>
+        <br />
+        <a class="asideMenu" href="#Bloodflowers">2000 - Bloodflowers</a>
+        <br />
+        <a class="asideMenu" href="#WildMoodSwings">1996 - Wild Mood Swings</a>
+        <br />
+        <a class="asideMenu" href="#Wish">1992 - Wish</a>
+        <br />
+        <a class="asideMenu" href="#Desintegration">1989 - Disintegration</a>
+        <br />
+        <a class="asideMenu" href="#KissMe3X">1987 - Kiss Me Kiss Me Kiss Me</a>
+        <br />
+        <a class="asideMenu" href="#TheHeadOnTheDoor">1985 - The Head On The Door</a>
+        <br />
+        <a class="asideMenu" href="#TheTop">1984 - The Top</a>
+        <br />
+        <a class="asideMenu" href="#Pornography">1982 - Pornography</a>
+        <br />
+        <a class="asideMenu" href="#Faith">1981 - Faith</a>
+        <br />
+        <a class="asideMenu" href="#17Seconds">1980 - Seventeen Seconds</a>
+        <br />
+        <a class="asideMenu" href="#3ImaginaryBoys">1979 - Three Imaginary Boys</a>
+      </aside>
+      <tr id="TheCure">
+        <td class="label"><img src="img/Labels/TheCure.jpg" /></td>
+        <td>
+          <h1>The Cure</h1>
+          <p>The Cure é o décimo segundo álbum de estúdio da banda homônima, lançado a 29 de Junho de 2004 pela
+            gravadora Geffen.</p>
+        </td>
+        <td class="t">
+          <ol class="c">
+            <li>Lost</li>
+            <li>Labyrinth</li>
+            <li>Before Three</li>
+            <li>The End of the World</li>
+            <li>Anniversary</li>
+            <li>Us or Them</li>
+            <li>alt.end</li>
+            <li>(I Don't Know What's Going) On</li>
+            <li>Taking Off</li>
+            <li>Never</li>
+            <li>The Promise"</li>
+
+          </ol>
+        </td>
+      </tr>
+
+
+      <tr id="Bloodflowers">
+        <td class="label"><img src="img/Labels/BloodFlowers.jpg" /></td>
+        <td>
+          <h1>Bloodflowers</h1>
+          <p>Bloodflowers é o décimo primeiro álbum de estúdio da banda inglesa The Cure, lançado em 2000. Em 2001 o
+            álbum foi indicado no Grammy Award como Melhor álbum de música alternativa.<br />
+            <q>...Gravar o Bloodflowers foi a melhor experiência que eu tive desde que gravei o Kiss Me Kiss Me Kiss Me.
+              Atingi os meus objectivos, que eram fazer o álbum, ter prazer enquanto o gravava, e acabar com algo
+              bastante intenso e emocional.</q>- Robert Smith
+          </p>
+        </td>
+        <td class="t">
+          <ol class="c">
+            <li>Out of This World</li>
+            <li>Watching Me Fall</li>
+            <li>Where the Birds Always Sing</li>
+            <li>Maybe Someday</li>
+            <li>Coming Up</li>
+            <li>The Last Day of Summer</li>
+            <li>There Is No If...</li>
+            <li>The Loudest Sound</li>
+            <li>39</li>
+            <li>Bloodflowers</li>
+          </ol>
+        </td>
+      </tr>
+
+      <tr id="WildMoodSwings">
+        <td class="label"><img src="img/Labels/WildMoodSwings.jpg" /></td>
+        <td>
+          <h1>Wild Mood Swings</h1>
+          <p>Wild Mood Swings é o décimo álbum de estúdio da banda inglesa The Cure, lançado em 1996 pela Fiction
+            Records.</p>
+        </td>
+        <td class="t">
+          <ol class="c">
+            <li>Want</li>
+            <li>Club America</li>
+            <li>This Is a Lie</li>
+            <li>The 13th</li>
+            <li>Strange Attraction</li>
+            <li>Mint Car</li>
+            <li>Jupiter Crash</li>
+            <li>Round & Round & Round</li>
+            <li>Gone!</li>
+            <li>Numb</li>
+            <li>Return</li>
+            <li>Trap</li>
+            <li>Treasure</li>
+            <li>Bare</li>
+          </ol>
+        </td>
+      </tr>
+
+
+      <tr id="Wish">
+        <td class="label"><img src="img/Labels/Wish.jpg" /></td>
+        <td>
+          <h1>Wish</h1>
+          <p>Wish é o nono álbum de estúdio da banda The Cure, lançado a 21 de Abril de 1992.<br /><q>Há algum paralelo
+              com os dias negros das gravações do Disintegration...foi como se estivesse a fazer o álbum sozinho, e os
+              outros apenas tocavam.</q>- Robert Smith</p>
+        </td>
+        <td class="t">
+          <ol class="c">
+            <li>Open</li>
+            <li>High</li>
+            <li>Apart</li>
+            <li>From the Edge of the Deep Green Sea</li>
+            <li>Wendy Time</li>
+            <li>Doing the Unstuck</li>
+            <li>Friday I'm in Love</li>
+            <li>Trust</li>
+            <li>A Letter to Elise</li>
+            <li>Cut</li>
+            <li>To Wish Impossible Things</li>
+            <li>End</li>
+          </ol>
+        </td>
+      </tr>
+
+
+      <tr id="Desintegration">
+        <td class="label"><img src="img/Labels/Desintegration.jpg" /></td>
+        <td>
+          <h1>Desintegration</h1>
+          <p>Disintegration é o oitavo álbum de estúdio pela banda britânica de rock alternativo, The Cure, lançado em 2
+            de maio de 1989.[4] Foi publicado pela Fiction Records e foi extraido quatro singles deste disco: "Lullaby",
+            "Fascination Street", "Lovesong" e "Pictures of You". O álbum marcou um retorno a estética gótica, tanto
+            pela temática como pela composição.</p>
+        </td>
+        <td class="t">
+          <ol class="c">
+            <li>Plainsong</li>
+            <li>Pictures of You</li>
+            <li>Closedown</li>
+            <li>Lovesong</li>
+            <li>Lullaby</li>
+            <li>Fascination Street</li>
+            <li>Prayers for Rain</li>
+            <li>The Same Deep Water as You</li>
+            <li>Disintegration</li>
+            <li>Untitled</li>
+          </ol>
+        </td>
+      </tr>
+
+      <tr id="KissMe3X">
+        <td class="label"><img src="img/Labels/KissMe.jpg" /></td>
+        <td>
+          <h1>Kiss Me, Kiss Me, Kiss Me</h1>
+          <p>Kiss Me, Kiss Me, Kiss Me é o sétimo álbum de estúdio da banda inglesa The Cure, lançado em maio de 1987
+            pela gravadora Fiction Records.</p>
+        </td>
+        <td class="t">
+          <ol class="c">
+            <li>The Kiss</li>
+            <li>Catch</li>
+            <li>Torture</li>
+            <li>If Only Tonight We Could Sleep</li>
+            <li>Why Can't I Be You?</li>
+            <li>How Beautiful You Are</li>
+            <li>The Snakepit</li>
+            <li>Hey You!</li>
+            <li>Just Like Heaven</li>
+            <li>All I Want</li>
+            <li>Hot Hot Hot!!!</li>
+            <li>One More Time</li>
+            <li>Like Cockatoos</li>
+            <li>Icing Sugar</li>
+            <li>The Perfect Girl</li>
+            <li>A Thousand Hours</li>
+            <li>Shiver and Shake</li>
+            <li>Fight</li>
+          </ol>
+        </td>
+      </tr>
+
+      <tr id="TheHeadOnTheDoor">
+        <td class="label"><img src="img/Labels/TheHead.jpg" /></td>
+        <td>
+          <h1>The Head on the Door</h1>
+          <p>The Head on the Door é o sexto álbum de estúdio da banda The Cure, lançado a 13 de Agosto de 1985.<q>Foi o
+              álbum mais variado que já fizemos, um pouco como uma compilação de singles...</q>- Robert Smith</p>
+        </td>
+        <td class="t">
+          <ol class="c">
+            <li>In Between Days</li>
+            <li>Kyoto Song</li>
+            <li>The Blood</li>
+            <li>Six Different Ways</li>
+            <li>Push</li>
+            <li>The Baby Screams</li>
+            <li>Close to Me</li>
+            <li>A Night Like This</li>
+            <li>Screw</li>
+            <li>Sinking</li>
+          </ol>
+        </td>
+      </tr>
+
+      <tr id="TheTop">
+        <td class="label"><img src="img/Labels/TheTop.jpg" /></td>
+        <td>
+          <h1>The Top</h1>
+          <p>The Top é o quinto álbum de estúdio da banda The Cure, lançado a 1 de Maio de 1984.</p>
+        </td>
+        <td class="t">
+          <ol class="c">
+            <li>Shake Dog Shake</li>
+            <li>Birdmad Girl</li>
+            <li>Wailing Wall</li>
+            <li>Give Me It</li>
+            <li>Dressing Up</li>
+            <li>The Caterpillar</li>
+            <li>Piggy in the Mirror</li>
+            <li>The Empty World</li>
+            <li>Bananafishbones</li>
+            <li>The Top</li>
+
+          </ol>
+        </td>
+      </tr>
+
+      <tr id="Pornography">
+        <td class="label"><img src="img/Labels/Pornography.jpg" /></td>
+        <td class="longtext">
+          <h1>Pornography</h1>
+          <p>Pornography é o quarto álbum de estúdio da banda britânica The Cure, lançado a 4 de Maio de 1982 pela
+            Fiction. Precedido pelo single Charlotte Sometimes no ano anterior, Pornography foi oprimeiro álbum da banda
+            com um novo produtor, Phil Thornalley, e foi gravado nos estúdios RAK entre Janeiro e Abril. Durante as
+            sessões da gravação do álbum, o grupo esteve à beira do colapso, com o uso de drogas pesadas, divergências
+            entre os seus membros, e a depressão do seu vocalista Robert Smith à influenciar o conteúdo das letras e da
+            música de Pornography. Este álbum marca o final do período sombrio do grupo que tinha começado com Seventeen
+            Seconds em 1980</p>
+        </td>
+        <td class="t">
+          <ol class="c">
+            <li>One Hundred Years</li>
+            <li>A Short Term Effect</li>
+            <li>The Hanging Garden</li>
+            <li>Siamese Twins</li>
+            <li>The Figurehead</li>
+            <li>A Strange Day</li>
+            <li>Cold</li>
+            <li>Pornography</li>
+          </ol>
+        </td>
+      </tr>
+
+      <tr id="Faith">
+        <td class="label"><img src="img/Labels/Faith.jpg" /></td>
+        <td class="longtext">
+          <h1>Faith</h1>
+          <p>Faith é o terceiro álbum de estúdio da banda britânica The Cure, lançado em 14 de abril de 1981 pela
+            gravadora Fiction Records. Precedido pelo single "Primary", Faith fez sucesso no Reino Unido, atingindo e
+            permanecendo na 14ª posição por 8 semanas. Faith foi muito bem recebido pela crítica. Mesmo tendo feito
+            sucesso, o álbum Faith foi, por outro lado, a obstinação da banda em seguir o clima sombrio mas de forma
+            mais acentuada em relação ao álbum anterior Seventeen Seconds, levando o The Cure a uma ruptura temporária
+            após o lançamento do álbum Pornography, em 1982.</p>
+        </td>
+        <td class="t">
+          <ol class="c">
+            <li>The Holy Hour</li>
+            <li>Primary</li>
+            <li>Other Voices</li>
+            <li>All Cats Are Grey</li>
+            <li>The Funeral Party</li>
+            <li>Doubt</li>
+            <li>The Drowning Man</li>
+            <li>Faith</li>
+          </ol>
+        </td>
+      </tr>
+
+      <tr id="17Seconds">
+        <td class="label"><img src="img/Labels/17Seconds.jpg" /></td>
+
+        <td class="longtext">
+          <h1>Seventeen Seconds </h1>
+          <p>Seventeen Seconds é o segundo álbum de estúdio da banda The Cure, lançado em 1980 pela Fiction Records. É o
+            primeiro álbum da "trilogia" que ainda inclui Faith e Pornography. Por muito tempo, fãs e críticos apontavam
+            esses três trabalhos como uma espécie de "trilogia negra" na carreira da banda, interrompida pela passagem
+            de Robert Smith nos Siouxsie and the Banshees e posteriores experimentações eletrônicas e mais populares. Em
+            2002, o lançamento de Trilogy (formado por Pornography, Disintegration e Bloodflowers) descaracterizou essa
+            trinca formalmente. Os álbuns são uma sequência do outro, obviamente por questões de lógica, já que não
+            foram lançados em sequência, mas por questões temáticas e estéticas também.</p>
+        </td>
+        <td class="t">
+          <ol class="c">
+            <li>A Reflection</li>
+            <li>Play for Today</li>
+            <li>Secrets</li>
+            <li>In Your House</li>
+            <li>Three</li>
+            <li>The Final Sound</li>
+            <li>A Forest</li>
+            <li>M</li>
+            <li>At Night</li>
+            <li>Seventeen Seconds</li>
+          </ol>
+        </td>
+      </tr>
+
+      <tr id="3ImaginaryBoys">
+        <td class="label"><img src="img/Labels/3ImaginaryBoys.jpg" /></td>
+
+        <td>
+          <h1>Three Imaginary Boys </h1>
+          <p>Three Imaginary Boys é o álbum de estreia da banda Inglesa The Cure, tendo sido lançado em 1979. Sua
+            formação com Robert Smith na guitarra e no vocal, Laurence Tolhurst na bateria e Michael Dempsey no baixo, o
+            disco contém 13 faixas.</p>
+        </td>
+        <td class="t">
+          <ol class="c">
+            <li>10:15 Saturday Night</li>
+            <li>Accuracy</li>
+            <li>Grinding Halt</li>
+            <li>Another Day</li>
+            <li>Object</li>
+            <li>Subway Song</li>
+            <li>Foxy Lady</li>
+            <li>Meathook</li>
+            <li>So What</li>
+            <li>Fire in Cairo</li>
+            <li>It's Not You</li>
+            <li>Three Imaginary Boys</li>
+            <li>Untitled (a.k.a. "The Weedy Burton", faixa escondida)</li>
+
+          </ol>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <footer><a class="Menu" href="#topo">Ir Para o Topo</a></footer>
+</body>
+
+</html>
