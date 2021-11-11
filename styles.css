@@ -84,6 +84,13 @@ img {
     padding-right: 1cm;
     padding-left: 1cm;
 }
+.icon{
+    width:100px;
+    height:100px;
+    float: none;
+    padding-right: 0;
+    padding-left: 0;
+}
 iframe {
     border: none;
     float: left;
@@ -122,10 +129,3 @@ a.sn{
     text-align:left;
     display:block;
 }    
-.icon{
-    width:100px;
-    height:100px;
-    float: none;
-    padding-right: 0;
-    padding-left: 0;
-}
